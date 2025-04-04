@@ -5,6 +5,13 @@ terraform {
       version = "~> 5.0"
     }
   }
+  backend "s3" {
+    bucket = "acit4640-ljackson-lab12"
+    key = ".terraform/terraform.tfstate"
+    region = "us-west-2"
+    encrypt = true
+    use_lockfile = true
+  }
 }
 
 provider "aws" {
